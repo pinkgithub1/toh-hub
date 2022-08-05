@@ -1,0 +1,43 @@
+local DiscordLib =
+    loadstring(game:HttpGet "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/discord")()
+
+local win = DiscordLib:Window("yo wsg")
+
+local serv = win:Server("P1NK's TOH Hub", "")
+
+local btns = serv:Channel("Main")
+
+btns:Button(
+    "Finish (Risky, only do on alt)",
+    function()
+	local HRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+
+for i,v in pairs(workspace.tower:GetDescendants()) do
+		if v.Name == 'FinishGlow' then
+				HRP.CFrame = CFrame.new(v.Position + Vector3.new(0,0,0))
+		end
+end
+    end
+)
+
+btns:Button(
+    "GodMode Lmao",
+    function()
+        for i,v in pairs(Workspace:GetDescendants()) do
+    if v.Name == 'kills' then
+        v:Destroy()
+    end
+end
+    end
+)
+
+btns:Seperator()
+
+
+btns:Button(
+    "Reset",
+    function()
+	game.Players.LocalPlayer.Character:ClearAllChildren()     
+    end
+)
